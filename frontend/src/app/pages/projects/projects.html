@@ -1,0 +1,94 @@
+<mat-card class="projects-card">
+
+  <!-- Header + Add Button -->
+  <div class="projects-header">
+    <h2>Projects</h2>
+
+    <button mat-raised-button color="primary" (click)="openCreateDialog()">
+      <mat-icon>add</mat-icon> Add Project
+    </button>
+  </div>
+
+  <!-- Search Bar -->
+  <mat-form-field class="search-bar" appearance="outline">
+    <mat-label>Search projects</mat-label>
+    <mat-icon matPrefix>search</mat-icon>
+
+    <input
+      matInput
+      (keyup)="onSearchChange($event)"
+      placeholder="Type to search..."
+    />
+
+    <button mat-icon-button matSuffix *ngIf="search" (click)="clearSearch()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <!-- Table -->
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    (matSortChange)="onSortChange($event)"
+    class="custom-table"
+  >
+    <!-- NAME -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Project</th>
+      <td mat-cell *matCellDef="let p">{{ p.name }}</td>
+    </ng-container>
+
+    <!-- STATUS -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let p">
+        <span class="status-badge" [ngClass]="p.status">
+          {{ p.status | titlecase }}
+        </span>
+      </td>
+    </ng-container>
+
+    <!-- OWNER -->
+    <ng-container matColumnDef="owner">
+      <th mat-header-cell *matHeaderCellDef>Owner</th>
+      <td mat-cell *matCellDef="let p">{{ p.owner?.name }}</td>
+    </ng-container>
+
+    <!-- ACTIONS -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let p" class="actions-cell">
+        <button
+          mat-icon-button
+          color="primary"
+          *ngIf="canEdit(p)"
+          (click)="openEditDialog(p)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button
+          mat-icon-button
+          color="warn"
+          *ngIf="canDelete(p)"
+          (click)="delete(p)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+
+  <!-- Pagination -->
+  <mat-paginator
+    [length]="total"
+    [pageSize]="limit"
+    [pageSizeOptions]="[5, 10, 25]"
+    (page)="onPageChange($event)"
+  >
+  </mat-paginator>
+</mat-card>

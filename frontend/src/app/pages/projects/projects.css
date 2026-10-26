@@ -1,0 +1,55 @@
+.projects-card {
+  padding: 25px;
+  border-radius: 16px !important;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.search-bar {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.custom-table {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Hover rows */
+.mat-mdc-row:hover {
+  background: #f3f4f6;
+  cursor: pointer;
+}
+
+/* Cleaner action buttons */
+.actions-cell button {
+  margin-right: 4px;
+}
+
+/* Status badge styles */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+}
+
+.status-badge.open {
+  background-color: #22c55e; /* green */
+}
+
+.status-badge.closed {
+  background-color: #ef4444; /* red */
+}
+
+.status-badge.paused {
+  background-color: #f59e0b; /* orange */
+}

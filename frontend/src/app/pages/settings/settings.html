@@ -1,0 +1,46 @@
+<div class="settings-container">
+  <mat-card class="settings-card">
+
+    <!-- Avatar + Info -->
+    <div class="profile-header">
+      <div class="avatar">
+        {{ user.name[0] | uppercase }}
+      </div>
+
+      <div class="user-info">
+        <h2>{{ user.name }}</h2>
+        <p>{{ user.email }}</p>
+        <span class="role-tag" [ngClass]="user.role">
+          {{ user.role | uppercase }}
+        </span>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <!-- Fields -->
+    <div class="details-section">
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput [value]="user.name" disabled>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput [value]="user.email" disabled>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Role</mat-label>
+        <input matInput [value]="user.role" disabled>
+      </mat-form-field>
+
+    </div>
+
+    <button mat-raised-button color="warn" class="logout-btn" (click)="logout()">
+      Logout
+    </button>
+
+  </mat-card>
+</div>

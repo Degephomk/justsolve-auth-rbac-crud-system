@@ -1,0 +1,37 @@
+<div class="auth-page">
+  <mat-card class="auth-card">
+
+    <h1 class="auth-title">Welcome Back</h1>
+    <p class="auth-subtitle">Login to your account</p>
+
+    <form [formGroup]="form" (ngSubmit)="login()" class="auth-form">
+
+      <!-- Email -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <mat-icon matPrefix>mail</mat-icon>
+        <input matInput type="email" formControlName="email">
+      </mat-form-field>
+
+      <!-- Password -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input matInput type="password" formControlName="password">
+      </mat-form-field>
+
+      <!-- Submit -->
+      <button mat-raised-button color="primary" class="auth-btn">
+        Login
+      </button>
+
+      <!-- Register link -->
+      <p class="auth-alt">
+        Don’t have an account?
+        <a routerLink="/register" class="auth-link">Register</a>
+      </p>
+
+    </form>
+
+  </mat-card>
+</div>

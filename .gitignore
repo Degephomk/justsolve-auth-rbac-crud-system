@@ -1,0 +1,25 @@
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Laravel
+backend/vendor/
+backend/storage/logs/*
+backend/bootstrap/cache/*.php
+backend/database/*.sqlite
+backend/database/*.sqlite-*
+
+# Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
+
+# Temporary backups and local files
+*.bak
+backend/user_id

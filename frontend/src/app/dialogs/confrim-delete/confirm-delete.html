@@ -1,0 +1,22 @@
+<div class="delete-container">
+
+  <div class="icon-wrapper">
+    <mat-icon class="warning-icon">delete</mat-icon>
+  </div>
+
+  <h2 class="title">Delete Project</h2>
+
+  <p class="message">
+    Are you sure you want to delete
+    <strong class="project-name">"{{ data.name }}"</strong>?
+  </p>
+
+  <div class="actions">
+    <button mat-button (click)="close(false)">Cancel</button>
+
+    <button mat-raised-button color="warn" (click)="close(true)">
+      Delete
+    </button>
+  </div>
+
+</div>

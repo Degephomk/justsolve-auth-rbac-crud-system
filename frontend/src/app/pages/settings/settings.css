@@ -1,0 +1,71 @@
+.settings-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.settings-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.user-info p {
+  margin: 4px 0;
+  color: #666;
+}
+
+.role-tag {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+/* Role colors */
+.role-tag.admin { background: #dc2626; }
+.role-tag.user { background: #3b82f6; }
+
+.details-section {
+  margin: 20px 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.logout-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+}
